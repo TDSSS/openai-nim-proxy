@@ -41,7 +41,11 @@ app.post('/v1/chat/completions', async (req, res) => {
   try {
 
 
-    console.log(JSON.stringify(req.headers));
+    const auth = req.get("authorization");
+    if(auth !=== MY_API_KEY) {
+      throw new Error("Wrong api key");
+    }
+    
     
     const { model, messages, temperature, max_tokens, stream } = req.body;
     
