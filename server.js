@@ -42,7 +42,7 @@ app.post('/v1/chat/completions', async (req, res) => {
 
 
     const auth = req.get("authorization");
-    if(auth !=== MY_API_KEY) {
+    if(auth !== MY_API_KEY) {
       throw new Error("Wrong api key");
     }
     
