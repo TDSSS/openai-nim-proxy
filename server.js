@@ -41,7 +41,7 @@ app.post('/v1/chat/completions', async (req, res) => {
   try {
 
 
-    console.log(req.header);
+    console.log(JSON.stringify(req.headers));
     
     const { model, messages, temperature, max_tokens, stream } = req.body;
     
